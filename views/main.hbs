@@ -1,0 +1,41 @@
+<div class="d-flex col-12 justify-content-center" id="formulario">
+    
+        <input type="text" id="nombre" placeholder="Nombre del producto">
+        <input type="text" id="descripcion" placeholder="descripcion del producto">
+        <input type="text" id="codigo" placeholder="codigo del producto">
+        <input type="text" id="fotoUrl" placeholder="url de la imagen del producto">
+        <input type="number" id="precio" placeholder="precio del producto">
+        <input type="number" id="stock" placeholder="stock del producto">
+        
+        <button onclick="addProduct()">Add Product</button>       
+    
+</div>
+
+<div class="d-flex col-12 justify-content-center ">
+    <table class="bg-secondary" style="width:50%">
+        <thead>
+            <tr>
+                <th class="text-center">Nombre</th>
+                <th class="text-center">Precio</th>
+                <th class="text-center">Foto</th>
+            </tr>
+        </thead>
+    <tbody id="containerProductos">
+        {{#if hayDatos}}        
+            {{#each productos}}            
+                <tr>
+                            
+                        <td class="text-center">{{title}} </td>
+                        <td class="text-center">{{price}}</td>
+                        <td class="text-center"><img src={{imgUrl}}></td>
+                    
+                </tr>
+            {{/each}}
+        {{else}}
+        <th class="inline-block" id="noHayProductos">
+            <td class="text-center">no hay productos</td>  
+        </th>
+        {{/if}}
+    </tbody> 
+    </table>
+</div>
